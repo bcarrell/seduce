@@ -6,6 +6,8 @@ queries as functions.
 
 Seduce is a way of writing SQL queries.  It does not provide database logic.
 
+*Seduce will not automatically escape your parameters (yet).*
+
 ### Install
 
 `npm install seduce`
