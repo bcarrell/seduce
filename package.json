@@ -1,10 +1,10 @@
 {
   "name": "seduce",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a package for writing isolated SQL",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "author": "Brandon Carrell",
   "license": "MIT",
