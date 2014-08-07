@@ -6,7 +6,6 @@ queries as functions.
 
 Seduce is a way of writing SQL queries.  It does not provide database logic.
 
-*Seduce will not automatically escape your parameters (yet).*
 
 ### Install
 
@@ -84,3 +83,6 @@ Starting with `queries.sql` like above...
     connection.end();
 
 Example taken from the documentation for node-mysql.
+
+**Seduce will not automatically escape your parameters.  Use the escape
+functionality with your database module.**
