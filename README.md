@@ -20,6 +20,11 @@ Start by writing your SQL queries like this, in a file like `queries.sql`:
     FROM cars
     WHERE cars.brand = :name AND cars.model = :model
 
+    -- name: findByNames
+    SELECT *
+    FROM cars
+    WHERE cars.brand IN :names
+
 Notice the `name:` notation.  This is required, and the name that you define
 will be the name of the function that `seduce` will generate for you.  You can
 add any number of comment lines describing what the query does after that line.
