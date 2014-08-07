@@ -20,7 +20,7 @@ Start by writing your SQL queries like this, in a file like `queries.sql`:
     FROM cars
     WHERE cars.brand = :name AND cars.model = :model
 
-Notice the `name:` pragma.  This is required, and the name that you define
+Notice the `name:` notation.  This is required, and the name that you define
 will be the name of the function that `seduce` will generate for you.  You can
 add any number of comment lines describing what the query does after that line.
 
