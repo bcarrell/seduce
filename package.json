@@ -1,0 +1,20 @@
+{
+  "name": "seduce",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon Carrell",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-nodeunit": "0.0.5",
+    "gulp-plumber": "^0.6.4",
+    "gulp-util": "^3.0.0"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
