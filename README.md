@@ -51,7 +51,12 @@ functions by referring to them by name, like this:
 
 This will return a String like this:
 
-    SELECT * FROM cars WHERE cars.name = "Ford" AND cars.model = "Explorer"
+    SELECT * FROM cars WHERE cars.brand = "Ford" AND cars.model = "Explorer"
+
+If you pass an array as an argument (like if you're doing an IN query), it'll
+produce something like this:
+
+    SELECT * FROM cars WHERE cars.brand IN ("Ford", "Honda")
 
 #### Full Example
 
