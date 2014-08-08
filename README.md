@@ -40,8 +40,12 @@ To use this query that you've just defined, do this:
     var seduce = require('seduce'),
         q = seduce('queries.sql');
 
-`seduce(...)` takes file paths to SQL files and returns an ordinary `Object` with functions.  You can call your
-functions by referring to them by name.  Any of these are equivalent:
+`seduce(...)` has the following signature: `paths {String|Array}` and `opt {Object}`.
+Paths are file paths to your sql files; opt is optional but highly recommended.
+It supports a key `escape` to attach a function to escape your parameters to
+prevent injection attacks.
+
+You can call your functions by referring to them by name.  Any of these are equivalent:
 
     var carQuery = q.findByNameAndModel('Ford', 'Explorer');
 
@@ -91,9 +95,6 @@ Starting with `queries.sql` like above...
     connection.end();
 
 Example taken from the documentation for node-mysql.
-
-**Seduce will not automatically escape your parameters.  Use the escape
-functionality with your database module.**
 
 #### Advantages
 
