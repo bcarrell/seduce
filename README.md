@@ -63,6 +63,9 @@ produce something like this:
 
     SELECT * FROM cars WHERE cars.brand IN ("Ford", "Honda")
 
+If you have multiple parameters with the same name, Seduce will take care of
+that for you and duplicate the value you provide in your query.
+
 #### Example
 
 Starting with `queries.sql` like above...
