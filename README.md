@@ -15,7 +15,7 @@ Seduce is a way of writing SQL queries.  It does not provide database logic.
 Start by writing your SQL queries like this, in a file like `queries.sql`:
 
     -- name: findByNameAndModel
-    -- Queries the cars table by a car name
+    -- Queries the cars table by a car name and model
     SELECT *
     FROM cars
     WHERE cars.brand = :name AND cars.model = :model
