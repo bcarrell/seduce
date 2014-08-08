@@ -6,12 +6,11 @@ queries as functions.
 
 Seduce is a way of writing SQL queries.  It does not provide database logic.
 
-
 ### Install
 
-`npm install seduce`
+    npm install seduce
 
-### Usage
+#### Usage
 
 Start by writing your SQL queries like this, in a file like `queries.sql`:
 
@@ -59,22 +58,23 @@ produce something like this:
 
     SELECT * FROM cars WHERE cars.brand IN ("Ford", "Honda")
 
-#### Full Example
+#### Example
 
 Starting with `queries.sql` like above...
 
-    var mysql      = require('mysql');
-    var connection = mysql.createConnection({
-      host     : 'localhost',
-      user     : 'me',
-      password : 'secret'
-    });
-
-    var q = require('seduce')('queries.sql');
+    var mysql = require('mysql'),
+      connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'me',
+        password : 'secret'
+      }),
+      seduce = require('seduce'),
+      q = seduce('queries.sql');
 
     connection.connect();
 
-    connection.query(q.findByNameAndModel('Ford', 'Explorer'), function(err, rows, fields) {
+    connection
+    .query(q.findByNameAndModel('Ford', 'Explorer'), function(err, rows, fields) {
       if (err) throw err;
 
       console.log('The solution is: ', rows[0].solution);
@@ -86,3 +86,23 @@ Example taken from the documentation for node-mysql.
 
 **Seduce will not automatically escape your parameters.  Use the escape
 functionality with your database module.**
+
+#### Advantages
+
+- Writing SQL in Javascript code is awful; anything remotely complex will be on
+multiple lines, and multiline strings in Javascript usually means dumping your
+strings into an array and joining them, or concatenating them across multiple
+lines.
+- Your editor likely has solid support for SQL syntax.  By putting your queries
+in sql files, you get the benefits of syntax highlighting and indentation rules.
+- You can copy and paste your queries elsewhere easier, like into your favorite
+database client, without having to deal with stripping quotes or brackets.
+- Someone else can write your queries without having to muck around in code.
+
+#### Status
+
+Brand new.  Use with caution.
+
+#### Credits
+
+Seduce is heavily inspired by a Clojure library by Kris Jenkins [Yesql](https://github.com/krisajenkins/yesql).
