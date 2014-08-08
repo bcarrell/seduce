@@ -1,6 +1,6 @@
 {
   "name": "seduce",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a package for writing isolated SQL",
   "main": "./lib/index.js",
   "scripts": {
