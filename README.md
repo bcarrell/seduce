@@ -41,10 +41,15 @@ To use this query that you've just defined, do this:
         q = seduce('queries.sql');
 
 `seduce(...)` takes file paths to SQL files and return an `Object` with functions.  You can call your
-functions by referring to them by name, like this:
+functions by referring to them by name.  Any of these are equivalent:
 
     var carQuery = q.findByNameAndModel('Ford', 'Explorer');
+
+or
+
     var carQuery = q.findByNameAndModel({ name: 'Ford', model: 'Explorer' });
+
+or
 
     var myParams = ['Ford, 'Explorer];
     var carQuery = q.findByNameAndModel.apply(null, myParams);
