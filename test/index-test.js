@@ -19,8 +19,12 @@ exports.testSeduce = function(test) {
   }), expected);
 
   expected = 'SELECT * FROM cars WHERE cars.name IN ("hello","world")';
-  console.log('now');
   test.strictEqual(q3.findByNameWithArray(['hello', 'world']), expected);
+
+  expected = 'SELECT * FROM cars WHERE cars.name = "hello"' +
+    ' AND cars.model = "world"';
+  test.strictEqual(q2.findByNameAndModel.apply(null, ['hello', 'world']),
+                   expected);
 
   test.done();
 };

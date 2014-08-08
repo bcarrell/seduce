@@ -40,7 +40,7 @@ To use this query that you've just defined, do this:
     var seduce = require('seduce'),
         q = seduce('queries.sql');
 
-`seduce(...)` takes file paths to SQL files and return an `Object` with functions.  You can call your
+`seduce(...)` takes file paths to SQL files and returns an ordinary `Object` with functions.  You can call your
 functions by referring to them by name.  Any of these are equivalent:
 
     var carQuery = q.findByNameAndModel('Ford', 'Explorer');
@@ -106,7 +106,7 @@ database client, without having to deal with stripping quotes or brackets.
 
 #### Status
 
-Brand new.  Use with caution.
+Brand new.  Use with caution.  Needs more test coverage.
 
 #### Credits
 
