@@ -1,6 +1,6 @@
 {
   "name": "seduce",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a package for writing isolated SQL",
   "main": "./lib/index.js",
   "scripts": {
@@ -16,5 +16,13 @@
   },
   "dependencies": {
     "lodash": "^2.4.1"
-  }
+  },
+  "keywords": [
+    "SQL",
+    "database",
+    "query",
+    "querying",
+    "mysql",
+    "postgresql"
+  ]
 }
