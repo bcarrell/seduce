@@ -43,7 +43,8 @@ To use this query that you've just defined, do this:
 `seduce(...)` has the following signature: `paths {String|Array}` and `opt {Object}`.
 Paths are file paths to your sql files; opt is optional but highly recommended.
 It supports a key `escape` to attach a function to escape your parameters to
-prevent injection attacks.
+prevent injection attacks.  Here's an example if you're using node-mysql:
+`seduce(['one.sql', 'two.sql], { escape: connection.escape })`
 
 You can call your functions by referring to them by name.  Any of these are equivalent:
 
