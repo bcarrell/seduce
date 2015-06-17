@@ -97,6 +97,10 @@ Starting with `queries.sql` like above...
 
 Example taken from the documentation for node-mysql.
 
+#### Quotes
+
+By default double quotes (`"`) are used for parameters; this is fine for MySQL but for PostgreSQL we need to use single quotes. You can change the quote parameter as an option: `seduce('one.sql'], { quote: "'" })`
+
 #### Advantages
 
 - Writing SQL in Javascript code is awful; anything remotely complex will be on
